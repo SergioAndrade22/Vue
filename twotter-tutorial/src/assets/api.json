@@ -1,0 +1,64 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "_MitchellRonmy",
+            "firstName": "Mitchell",
+            "lastName": "Ronmy",
+            "email": "mitchellronmy@theearthissquare.com",
+            "isAdmin": true,
+            "isCreator": false,
+            "isReader": false,
+            "twoots": [
+                {
+                    "id": 1,
+                    "content": "Twotter is amazing"
+                },
+                {
+                    "id": 2,
+                    "content": "Subscribe to The Earth is Square!"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "username": "Hosuseri98",
+            "firstName": "Sergio",
+            "lastName": "Andrade",
+            "email": "mail@mail.com",
+            "isAdmin": false,
+            "isCreator": true,
+            "isReader": false,
+            "twoots": [
+                {
+                    "id": 1,
+                    "content": "Follow me on Twitch"
+                },
+                {
+                    "id": 2,
+                    "content": "Stream every fridays!"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "username": "testUser",
+            "firstName": "TestName",
+            "lastName": "TestSurname",
+            "email": "test@test.com",
+            "isAdmin": false,
+            "isCreator": false,
+            "isReader": true,
+            "twoots": [
+                {
+                    "id": 1,
+                    "content": "Test 1"
+                },
+                {
+                    "id": 2,
+                    "content": "Test 2"
+                }
+            ]
+        },
+    ]
+}

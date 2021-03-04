@@ -16,9 +16,13 @@
 
       <hr>
 
-      <form class="user-profile__create-twoot" @submit.prevent="createTwoot()">
+      <form class="user-profile__create-twoot" @submit.prevent="createTwoot()" :class="{ '--exceeded': characterCount === 180 }">
         <label for="newTwoot"><strong>New Twoot</strong></label>
-        <textarea name="newTwoot" id="newTwoot" rows="4" class="newTwoot" v-model="newTwoot.content"></textarea>
+        <textarea name="newTwoot" id="newTwoot" rows="4" class="newTwoot" v-model="newTwoot.content" maxlength="180"></textarea>
+        <span class="count-indicator">({{characterCount}}/180)</span>
+        <p class="errmsg" v-if="characterCount === 180">
+          Max number of characters reached!
+        </p>
 
         <div class="user-profile__create-twoot-type">
           <label for="newTwootType"><strong>Type: </strong></label>
@@ -80,6 +84,7 @@ export default class UserProfile extends Vue {
     content: '',
     type: 'instant'
   }
+  characterCount: number = this.newTwoot.content.length;
 
   get fullName() {
     return  `${this.user.firstName} ${this.user.lastName}`;
@@ -97,6 +102,11 @@ export default class UserProfile extends Vue {
   followersWatch(newCount: number, oldCount: number){
     if (oldCount < newCount)
       console.log(`${this.user.username} has gained a follower!!!`);
+  }
+
+  @Watch('newTwoot.content')
+  updateCharacterCount() {
+    this.characterCount = this.newTwoot.content.length;
   }
 
   toggleFavourite(id: number): void {    
@@ -120,7 +130,6 @@ export default class UserProfile extends Vue {
 .user-profile {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  width: 100%;
   padding: 50px 5%;
 }
 
@@ -165,6 +174,56 @@ export default class UserProfile extends Vue {
 .user-profile__create-twoot {
   display: flex;
   flex-direction: column;
+}
+
+.user-profile__create-twoot {
+  position: relative;
+}
+
+.count-indicator{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.errmsg {
+	position: absolute;
+  top: -90%;
+  left: 25%;
+	padding: 10px;
+	width: 300px;
+	background-color: #f00;
+	border: 4px solid #333;
+	border-radius: 30px;
+	text-align: center;
+	font-size: large;
+	line-height: 1.4em;
+}
+
+.errmsg:before,
+.errmsg:after {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+
+.errmsg:before {
+	left: 30px;
+	bottom: -51px;
+	border: 25px solid;
+	border-color: #333 transparent transparent #333;
+}
+
+.errmsg:after {
+  left: 35px;
+  bottom: -40px;
+  border: 26px solid;
+  border-color: #f00 transparent transparent #f00;
+}
+
+.--exceeded {
+  border: 3px solid red;
 }
 
 hr {
