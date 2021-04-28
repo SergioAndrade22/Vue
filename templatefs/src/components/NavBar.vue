@@ -1,5 +1,5 @@
 <template>
-  <b-navbar id="nav" toggleable="lg" type="dark" variant="info">
+  <b-navbar id="nav" toggleable="lg" type="dark" variant="app-primary">
     <b-navbar-brand>Family Size</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
