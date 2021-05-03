@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav-bar />
-    <router-view />
+    <router-view id="content" />
   </div>
 </template>
 
@@ -15,12 +15,21 @@ export default class App extends Vue {}
 </script>
 
 <style lang="scss">
+@import "../src/assets/scss/main.scss";
+#content {
+  height: auto;
+  min-height: 100% !important;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: $app-text;
+  display: grid;
+  grid-template-rows: 4em 1fr;
+  height: 100vh;
 }
 
 #nav {
@@ -28,10 +37,10 @@ export default class App extends Vue {}
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: $app-text;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: $app-accent;
     }
   }
 }

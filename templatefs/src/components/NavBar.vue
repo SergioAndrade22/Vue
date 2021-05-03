@@ -22,8 +22,8 @@
       </b-nav-form>
 
       <b-navbar-nav>
-        <b-link to="/">Home</b-link>
-        <b-link to="/about">About</b-link>
+        <b-link class="nav-link" to="/">Home</b-link>
+        <b-link class="nav-link" to="/about">About</b-link>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -35,7 +35,6 @@ import { BLink, BFormInput, BButton } from "bootstrap-vue";
 
 Vue.component("b-form-input", BFormInput);
 Vue.component("b-button", BButton);
-
 Vue.component("b-link", BLink);
 
 @Component
@@ -52,5 +51,9 @@ export default class NavBar extends Vue {}
 .icon {
   display: inline;
   width: 1.2rem;
+}
+
+.nav-link:not(:last-child) {
+  padding-right: 10px;
 }
 </style>

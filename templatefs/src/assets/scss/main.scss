@@ -1,5 +1,15 @@
+$app-primary: #171453;
+$app-text: #CAE5F7;
+$app-accent: #4DB4F9;
+$app-danger: #E03462;
+$app-success: #C3F74A;
+
 $theme-colors: (
-  "app-primary": #171453
+  "app-primary": $app-primary,
+  "app-text": $app-text,
+  "app-accent": $app-accent,
+  "app-danger": $app-danger,
+  "app-success": $app-success
 );
 
 // Bootstrap and its default variables
