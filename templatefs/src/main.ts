@@ -2,12 +2,20 @@ import Vue from "vue";
 import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
+// Import Bootstrap an BootstrapVue CSS files (order is important)
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 import "@/assets/scss/main.scss";
-import { NavbarPlugin } from "bootstrap-vue";
+import { NavbarPlugin, BootstrapVue, IconsPlugin } from "bootstrap-vue";
 
-Vue.config.productionTip = false;
+
+// Make BootstrapVue available throughout your project
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
 Vue.use(NavbarPlugin);
 
+Vue.config.productionTip = false;
 new Vue({
   router,
   render: (h) => h(App),

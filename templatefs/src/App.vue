@@ -6,11 +6,16 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { Component, Vue } from "vue-property-decorator";
 import NavBar from "@/components/NavBar.vue";
+import AppCard from "@/components/AppCard.vue";
 
-Vue.component("nav-bar", NavBar);
-
+@Component({
+  components: {
+    NavBar,
+    AppCard,
+  },
+})
 export default class App extends Vue {}
 </script>
 
@@ -26,7 +31,7 @@ export default class App extends Vue {}
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: $app-text;
+  color: $app-secondary;
   display: grid;
   grid-template-rows: 4em 1fr;
   height: 100vh;
@@ -37,7 +42,7 @@ export default class App extends Vue {}
 
   a {
     font-weight: bold;
-    color: $app-text;
+    color: $app-secondary;
 
     &.router-link-exact-active {
       color: $app-accent;

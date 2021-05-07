@@ -1,0 +1,13 @@
+$app-primary: #171453;
+$app-secondary: #CAE5F7;
+$app-accent: #4DB4F9;
+$app-danger: #E03462;
+$app-success: #C3F74A;
+
+$theme-colors: (
+  "app-primary": $app-primary,
+  "app-secondary": $app-secondary,
+  "app-accent": $app-accent,
+  "app-danger": $app-danger,
+  "app-success": $app-success
+);

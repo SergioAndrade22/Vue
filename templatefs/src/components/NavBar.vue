@@ -1,6 +1,6 @@
 <template>
   <b-navbar id="nav" toggleable="lg" type="dark" variant="app-primary">
-    <b-navbar-brand>Family Size</b-navbar-brand>
+    <!-- <b-navbar-brand>Family Size</b-navbar-brand> -->
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -17,7 +17,7 @@
           size="sm"
           class="my-2 my-sm-0 w-20"
           type="submit"
-          ><img class="icon" src="@/assets/loupe.svg" />Search</b-button
+          ><img class="icon" src="@/assets/img/loupe.svg" />Search</b-button
         >
       </b-nav-form>
 
@@ -31,21 +31,31 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { BLink, BFormInput, BButton } from "bootstrap-vue";
+import { BLink, BFormInput, BButton, BNavbarBrand } from "bootstrap-vue";
 
 Vue.component("b-form-input", BFormInput);
 Vue.component("b-button", BButton);
 Vue.component("b-link", BLink);
+Vue.component("b-navbar-brand", BNavbarBrand);
 
 @Component
 export default class NavBar extends Vue {}
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/variables.scss";
+#nav {
+  padding: 0 !important;
+}
+
 #search-form {
   margin: auto;
   justify-content: center;
   width: 50%;
+}
+
+#nav-collapse {
+  background-color: $app-primary;
 }
 
 .icon {
