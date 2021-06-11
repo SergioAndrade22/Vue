@@ -20,7 +20,7 @@ export default class App extends Vue {}
 </script>
 
 <style lang="scss">
-@import "../src/assets/scss/main.scss";
+@import "../src/assets/scss/variables.scss";
 #content {
   height: auto;
   min-height: 100% !important;

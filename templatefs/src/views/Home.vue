@@ -41,6 +41,8 @@ export default class Home extends Vue {}
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/variables.scss";
+
 .home {
   display: grid;
   grid-template-rows: 45% 1fr;
@@ -49,5 +51,10 @@ export default class Home extends Vue {}
 .card-container {
   display: flex;
   flex-direction: row;
+  background: linear-gradient(
+    to right bottom,
+    rgba($app-accent, 0.25),
+    rgba($app-secondary, 0.15)
+  );
 }
 </style>

@@ -2,10 +2,10 @@ import Vue from "vue";
 import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
+import "@/assets/scss/variables.scss";
 // Import Bootstrap an BootstrapVue CSS files (order is important)
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-import "@/assets/scss/main.scss";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
 import { NavbarPlugin, BootstrapVue, IconsPlugin } from "bootstrap-vue";
 
 

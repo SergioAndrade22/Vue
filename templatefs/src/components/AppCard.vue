@@ -28,8 +28,22 @@ export default class AppCard extends Vue {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/scss/variables.scss";
+
 div {
   max-width: 400px;
   margin: 5px;
+}
+
+.card {
+  background-color: $app-primary;
+  border: 2px solid $app-accent;
+  -webkit-box-shadow: 6px 8px 18px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 6px 8px 18px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 6px 8px 18px 0px rgba(0, 0, 0, 0.5);
+
+  &-subtitle {
+    color: $app-accent !important;
+  }
 }
 </style>

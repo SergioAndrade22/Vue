@@ -1,6 +1,6 @@
 <template>
-  <b-navbar id="nav" toggleable="lg" type="dark" variant="app-primary">
-    <!-- <b-navbar-brand>Family Size</b-navbar-brand> -->
+  <b-navbar id="nav" toggleable="lg" variant="app-primary">
+    <b-navbar-brand>Family Size</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -46,6 +46,7 @@ export default class NavBar extends Vue {}
 @import "@/assets/scss/variables.scss";
 #nav {
   padding: 0 !important;
+  align-items: center;
 }
 
 #search-form {
@@ -65,5 +66,14 @@ export default class NavBar extends Vue {}
 
 .nav-link:not(:last-child) {
   padding-right: 10px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  margin: 0 !important;
+  background-color: $app-primary;
+  color: $app-secondary !important;
+  height: 100%;
 }
 </style>
